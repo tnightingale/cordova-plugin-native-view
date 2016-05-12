@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="cordova-plugin-websocket-server" version="0.0.1">
+  <name>Websocket Server</name>
+  <description>Cordova Websocket Server Plugin</description>
+  <license>Apache 2.0</license>
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="WebsocketServer">
+        <param name="android-package" value="com.affinitybridge.websocketserver.WebsocketServer" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <framework src="src/android/websocketserver.gradle" custom="true" type="gradleReference" />
+    <!-- <framework src="org.java-websocket:Java-WebSocket:1.3.0"/> -->
+    <!-- <framework src="com.koushikdutta.async:androidasync:2.+" /> -->
+    <framework src="lib/AndroidAsync/AndroidAsync" custom="true" />
+
+    <source-file src="src/android/WebsocketServer.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/Server.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/SnapshotUtil.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/FrameManager.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/ViewSnapshotRunnable.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/BitmapCompressRunnable.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/FrameSendRunnable.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/FrameTask.java" target-dir="src/com/affinitybridge/websocketserver"/>
+
+    <!-- MAPBOX API FOR TESTING -->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <service android:name="com.mapbox.mapboxsdk.telemetry.TelemetryService" />
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+    <!-- END MAPBOX API FOR TESTING -->
+
+  </platform>
+</plugin>
