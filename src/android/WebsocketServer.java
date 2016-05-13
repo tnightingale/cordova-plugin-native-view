@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.koushikdutta.async.callback.CompletedCallback;
-import com.koushikdutta.async.http.WebSocket;
+//import com.koushikdutta.async.http.WebSocket;
 import com.koushikdutta.async.http.server.AsyncHttpServer;
 import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 
@@ -23,7 +23,7 @@ import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMapOptions;
 
-//import org.java_websocket.WebSocket;
+import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,8 +38,8 @@ import java.net.UnknownHostException;
 public class WebsocketServer extends CordovaPlugin {
     private static String TAG = WebsocketServer.class.getName();
 
-//    private Server server;
-    AsyncHttpServer server = new AsyncHttpServer();
+    private Server server;
+//    AsyncHttpServer server = new AsyncHttpServer();
     private View view;
 
     @Override
@@ -49,45 +49,13 @@ public class WebsocketServer extends CordovaPlugin {
 
         createView();
 
-//        try {
-//            final int port = 8887;
-//            this.server = new Server(port);
-//            this.server.addConnectionListener(new Server.ConnectionListener() {
-//                @Override
-//                public void onOpen(final WebSocket conn, ClientHandshake handshake) {
-//                    final Snapper snapper = SnapshotUtil.getSnapper(view);
-//                    FrameManager.setSnapper(snapper);
-//                    cordova.getActivity().runOnUiThread(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            startRendering(new TimeAnimator.TimeListener() {
-//                                @Override
-//                                public void onTimeUpdate(TimeAnimator animation, long totalTime, long deltaTime) {
-//                                    FrameManager.getViewSnapshot(snapper, conn);
-//                                }
-//                            });
-//                        }
-//                    });
-//                }
-//
-//                @Override
-//                public void onClose(WebSocket conn, int code, String reason, boolean remote) {}
-//
-//                @Override
-//                public void onMessage(final WebSocket conn, String message) {}
-//
-//                @Override
-//                public void onError(WebSocket conn, Exception e) {}
-//            });
-//            this.server.start();
-//        } catch (UnknownHostException e) {
-//            Log.e(TAG, e.getMessage());
-//        }
-
-        server.websocket("/", new AsyncHttpServer.WebSocketRequestCallback() {
-            @Override
-            public void onConnected(final WebSocket webSocket, AsyncHttpServerRequest request) {
-                final Snapper snapper = SnapshotUtil.getSnapper(view);
+        try {
+            final int port = 8887;
+            this.server = new Server(port);
+            this.server.addConnectionListener(new Server.ConnectionListener() {
+                @Override
+                public void onOpen(final WebSocket conn, ClientHandshake handshake) {
+                    final Snapper snapper = SnapshotUtil.getSnapper(view);
                     FrameManager.setSnapper(snapper);
                     cordova.getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -95,15 +63,47 @@ public class WebsocketServer extends CordovaPlugin {
                             startRendering(new TimeAnimator.TimeListener() {
                                 @Override
                                 public void onTimeUpdate(TimeAnimator animation, long totalTime, long deltaTime) {
-                                    FrameManager.getViewSnapshot(snapper, webSocket);
+                                    FrameManager.getViewSnapshot(snapper, conn);
                                 }
                             });
                         }
                     });
-            }
-        });
+                }
 
-        server.listen(8887);
+                @Override
+                public void onClose(WebSocket conn, int code, String reason, boolean remote) {}
+
+                @Override
+                public void onMessage(final WebSocket conn, String message) {}
+
+                @Override
+                public void onError(WebSocket conn, Exception e) {}
+            });
+            this.server.start();
+        } catch (UnknownHostException e) {
+            Log.e(TAG, e.getMessage());
+        }
+
+//        server.websocket("/", new AsyncHttpServer.WebSocketRequestCallback() {
+//            @Override
+//            public void onConnected(final WebSocket webSocket, AsyncHttpServerRequest request) {
+//                final Snapper snapper = SnapshotUtil.getSnapper(view);
+//                FrameManager.setSnapper(snapper);
+//                cordova.getActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        startRendering(new TimeAnimator.TimeListener() {
+//                            @Override
+//                            public void onTimeUpdate(TimeAnimator animation, long totalTime, long deltaTime) {
+//                                FrameManager.getViewSnapshot(snapper, webSocket);
+//                            }
+//                        });
+//                    }
+//                });
+//            }
+//        });
+//
+//        server.listen(8887);
     }
 
     @Override

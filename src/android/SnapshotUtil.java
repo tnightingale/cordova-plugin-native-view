@@ -64,7 +64,7 @@ class Snapper {
                 canvas.drawBitmap(b, 0, 0, null);
             }
         }
-        return Bitmap.createBitmap(bitmap);
-//        return bitmap;
+//        return Bitmap.createBitmap(bitmap);
+        return bitmap;
     }
 }

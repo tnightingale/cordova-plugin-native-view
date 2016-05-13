@@ -2,9 +2,9 @@ package com.affinitybridge.websocketserver;
 
 import android.graphics.Bitmap;
 
-import com.koushikdutta.async.http.WebSocket;
+//import com.koushikdutta.async.http.WebSocket;
 
-//import org.java_websocket.WebSocket;
+import org.java_websocket.WebSocket;
 
 class FrameTask implements
         ViewSnapshotRunnable.TaskRunnableSnapshotMethods,

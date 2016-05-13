@@ -5,9 +5,9 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-//import org.java_websocket.WebSocket;
+import org.java_websocket.WebSocket;
 
-import com.koushikdutta.async.http.WebSocket;
+//import com.koushikdutta.async.http.WebSocket;
 
 import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
