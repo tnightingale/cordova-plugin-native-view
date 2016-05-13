@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: ws: data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Websocket Server Test</title>
+    </head>
+    <body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum facilisis cursus metus sed dictum. Mauris sit amet elementum neque, eu luctus orci. Donec sodales metus vel nulla blandit luctus. Aliquam hendrerit rutrum nisi et eleifend. Ut id lobortis augue. Cras gravida lacus quam. Aenean iaculis orci justo, a posuere sapien maximus nec. Ut scelerisque elit nisl, eget bibendum turpis vestibulum in. Curabitur ultrices, felis eu congue bibendum, est dui porttitor nibh, in tristique dui orci eget urna. Phasellus tellus leo, elementum vel ligula ac, fringilla lobortis elit. Proin pharetra, tellus non feugiat vehicula, nunc dui ornare quam, ut blandit ipsum lorem at elit. Nunc mattis auctor est. Donec hendrerit venenatis ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <p>Praesent et augue ut nunc pharetra rhoncus ac sodales orci. Praesent sed mollis libero. Curabitur pulvinar libero nibh. Sed blandit augue et turpis semper tincidunt. Phasellus at metus consequat, tempor sem ut, bibendum tortor. Suspendisse laoreet nibh ligula. In hac habitasse platea dictumst. Vivamus nec justo scelerisque, sagittis risus eget, pretium leo. Quisque porta massa in risus luctus, quis porta risus vulputate. Curabitur ultricies nisl nunc, sed euismod ipsum euismod et. Nam ac efficitur massa. Morbi et tellus a eros fermentum tincidunt.</p>
+        <p>Nullam quis pharetra sem. Cras tincidunt mi euismod, ultrices justo sit amet, dictum ligula. Duis vehicula convallis nisl quis faucibus. Vestibulum dictum dictum enim sed ultrices. Sed nec accumsan massa, volutpat condimentum est. Sed tincidunt rutrum augue vel condimentum. In ornare lectus eget ullamcorper tempus. Aliquam ut mollis sem. Pellentesque sed imperdiet risus, at accumsan sem. Cras diam ex, scelerisque a purus sed, suscipit ornare justo. Nam non ipsum libero. Etiam tempor felis nisi, vitae ornare turpis ornare id. Donec malesuada, risus imperdiet sodales congue, lacus elit elementum turpis, eu finibus erat nisl vel justo.</p>
+        <div id="map" data-canvas-view="test"></div>
+        <p>Cras ut ipsum lacus. Curabitur sed ultricies nunc, eu pellentesque ante. Vestibulum quis nisl in ex porta bibendum. Curabitur sed viverra tortor, eget semper tellus. In hac habitasse platea dictumst. Sed lobortis nulla vitae purus iaculis facilisis. Etiam molestie sapien non imperdiet blandit. In laoreet ligula malesuada viverra efficitur. Donec nec ex orci. Praesent sit amet nunc tempor, tincidunt tortor sed, egestas nunc. Maecenas feugiat, eros non finibus pharetra, velit leo egestas augue, sit amet varius felis eros quis risus. Fusce eget sem eget augue tincidunt fringilla. Pellentesque felis lacus, sagittis eget maximus eget, consectetur non mi.</p>
+        <p>Praesent vel tincidunt nulla, ac suscipit libero. Suspendisse a nisl in magna posuere tempor. Cras blandit, magna id vestibulum venenatis, odio dolor vulputate est, at consectetur metus felis vitae nisl. Quisque vitae venenatis mauris. Sed in nisl vitae tortor consequat venenatis at in ipsum. Vestibulum quis aliquam neque. Nunc dapibus velit feugiat dolor lacinia finibus. Maecenas finibus facilisis vulputate. Mauris vulputate nunc orci, quis hendrerit dui luctus eu. Donec hendrerit metus at enim commodo, ac hendrerit elit rutrum. Aenean pellentesque eu eros a luctus. Suspendisse luctus massa eu leo auctor, eu viverra tellus aliquam. Curabitur accumsan malesuada purus.</p>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
