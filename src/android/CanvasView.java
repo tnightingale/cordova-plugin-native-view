@@ -161,7 +161,7 @@ public class CanvasView extends CordovaPlugin {
         final MapView mapView = new MapView(webView.getContext(), new MapboxMapOptions()
                 .accessToken("pk.eyJ1IjoiYWZmaW5pdHlicmlkZ2UiLCJhIjoicW4wNkNXdyJ9.KyFVX7DUqVXDdSOwYnLm5Q")
                 .styleUrl(Style.MAPBOX_STREETS)
-                .camera(new CameraPosition.Builder().target(new LatLng(0.0, 0.0)).zoom(5).build()));
+                .camera(new CameraPosition.Builder().target(new LatLng(-39.283293868938486, 174.08935546875)).zoom(5).build()));
         mapView.onResume();
         mapView.onCreate(null);
         registerView("test", mapView);
@@ -180,14 +180,20 @@ public class CanvasView extends CordovaPlugin {
         }
         View view = views.get(type);
         canvases.put(id, type);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(width, height);
+        view.setLayoutParams(params);
 
-        if (debug && view.getParent() == null) {
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(width, height);
+        if (debug) {
             params.setMargins(0, height + 10, 0, 0);
-            view.setLayoutParams(params);
+        }
 
+        if (view.getParent() == null) {
             final FrameLayout layout = (FrameLayout) webView.getView().getParent();
             layout.addView(view);
+        }
+
+        if (!debug) {
+            webView.getView().bringToFront();
         }
 
         return new JSONObject()

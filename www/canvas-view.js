@@ -76,7 +76,7 @@ function initViews() {
 
         type = container.dataset.canvasView;
         delete container.dataset.canvasView;
-        debug = container.dataset.debug || false;
+        debug = container.dataset.debug !== undefined;
         delete container.dataset.debug;
 
         new View(containers[i], type, debug);
