@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-  id="cordova-plugin-websocket-server" version="0.0.1">
-  <name>Websocket Server</name>
-  <description>Cordova Websocket Server Plugin</description>
+  id="cordova-plugin-nativeview" version="0.0.1">
+  <name>Cordova Native View</name>
+  <description>Cordova plugin provides other plugins ability to embed native views with a HTML5 Canvas element.</description>
   <license>Apache 2.0</license>
 
   <js-module src="www/mixin.js" name="mixin" />
@@ -20,7 +20,7 @@
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="CanvasView">
-        <param name="android-package" value="com.affinitybridge.websocketserver.CanvasView" />
+        <param name="android-package" value="com.tnightingale.cordova.nativeview.CanvasView" />
         <param name="onload" value="true" />
       </feature>
     </config-file>
@@ -31,14 +31,14 @@
     <!-- <framework src="com.koushikdutta.async:androidasync:2.+" /> -->
     <!-- <framework src="lib/AndroidAsync/AndroidAsync" custom="true" /> -->
 
-    <source-file src="src/android/CanvasView.java" target-dir="src/com/affinitybridge/websocketserver"/>
-    <source-file src="src/android/Server.java" target-dir="src/com/affinitybridge/websocketserver"/>
-    <source-file src="src/android/SnapshotUtil.java" target-dir="src/com/affinitybridge/websocketserver"/>
-    <source-file src="src/android/FrameManager.java" target-dir="src/com/affinitybridge/websocketserver"/>
-    <source-file src="src/android/ViewSnapshotRunnable.java" target-dir="src/com/affinitybridge/websocketserver"/>
-    <source-file src="src/android/BitmapCompressRunnable.java" target-dir="src/com/affinitybridge/websocketserver"/>
-    <source-file src="src/android/FrameSendRunnable.java" target-dir="src/com/affinitybridge/websocketserver"/>
-    <source-file src="src/android/FrameTask.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/CanvasView.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
+    <source-file src="src/android/Server.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
+    <source-file src="src/android/SnapshotUtil.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
+    <source-file src="src/android/FrameManager.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
+    <source-file src="src/android/ViewSnapshotRunnable.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
+    <source-file src="src/android/BitmapCompressRunnable.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
+    <source-file src="src/android/FrameSendRunnable.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
+    <source-file src="src/android/FrameTask.java" target-dir="src/com/tnightingale/cordova/nativeview"/>
 
     <!-- MAPBOX API FOR TESTING -->
     <config-file target="AndroidManifest.xml" parent="/manifest/application">

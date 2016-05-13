@@ -1,4 +1,4 @@
-package com.affinitybridge.websocketserver;
+package com.tnightingale.cordova.nativeview;
 
 import android.animation.TimeAnimator;
 import android.support.annotation.UiThread;

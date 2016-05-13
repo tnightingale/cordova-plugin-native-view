@@ -29,5 +29,7 @@
     <preference name="xwalkMode" value="embedded" />
     <preference name="xwalkMultipleApk" value="true" />
     <plugin name="cordova-plugin-crosswalk-webview" spec="~1.7.0" />
-    <plugin name="cordova-plugin-websocket-server" spec="../cordova-plugin-websocket-server" />
+    <plugin name="cordova-plugin-websocket-server" spec=".." />
+    <plugin name="cordova-plugin-native-view" spec=".." />
+    <plugin name="cordova-plugin-nativeview" spec=".." />
 </widget>

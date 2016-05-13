@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-nativeview",
+  "version": "0.0.1",
+  "description": "Cordova plugin provides other plugins ability to embed native views with a HTML5 Canvas element.",
+  "cordova": {
+    "id": "cordova-plugin-nativeview",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnightingale/cordova-plugin-nativeview.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Tom Nightingale",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/tnightingale/cordova-plugin-nativeview/issues"
+  },
+  "homepage": "https://github.com/tnightingale/cordova-plugin-nativeview#readme",
+  "engines": {
+    "cordovaDependencies": {
+      "0.0.1": {
+        "cordova-android": ">5.0.0",
+        "cordova-plugin-crosswalk-webview": ">1.7.0"
+      },
+    }
+  }
+}
