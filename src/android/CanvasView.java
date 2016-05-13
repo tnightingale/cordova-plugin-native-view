@@ -1,21 +1,15 @@
 package com.affinitybridge.websocketserver;
 
 import android.animation.TimeAnimator;
-import android.app.Activity;
-import android.content.res.Resources;
-import android.graphics.Point;
 import android.support.annotation.UiThread;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.koushikdutta.async.callback.CompletedCallback;
+//import com.koushikdutta.async.callback.CompletedCallback;
 //import com.koushikdutta.async.http.WebSocket;
-import com.koushikdutta.async.http.server.AsyncHttpServer;
-import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
+//import com.koushikdutta.async.http.server.AsyncHttpServer;
+//import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.constants.Style;
