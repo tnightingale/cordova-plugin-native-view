@@ -4,10 +4,23 @@
   <name>Websocket Server</name>
   <description>Cordova Websocket Server Plugin</description>
   <license>Apache 2.0</license>
+
+  <js-module src="www/mixin.js" name="mixin" />
+  <js-module src="www/events-mixin.js" name="events-mixin" />
+  <js-module src="www/plugin-api-mixin.js" name="plugin-api-mixin" />
+  <js-module src="www/touch.js" name="touch" />
+  <asset src="www/worker.js" target="canvas-view/worker.js" />
+  <asset src="www/pako_inflate.js" target="canvas-view/pako_inflate.js" />
+
+  <js-module src="www/canvas-view.js" name="CanvasView">
+    <clobbers target="window.CanvasView" />
+  </js-module>
+
+
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="WebsocketServer">
-        <param name="android-package" value="com.affinitybridge.websocketserver.WebsocketServer" />
+      <feature name="CanvasView">
+        <param name="android-package" value="com.affinitybridge.websocketserver.CanvasView" />
         <param name="onload" value="true" />
       </feature>
     </config-file>
@@ -17,7 +30,7 @@
     <!-- <framework src="com.koushikdutta.async:androidasync:2.+" /> -->
     <framework src="lib/AndroidAsync/AndroidAsync" custom="true" />
 
-    <source-file src="src/android/WebsocketServer.java" target-dir="src/com/affinitybridge/websocketserver"/>
+    <source-file src="src/android/CanvasView.java" target-dir="src/com/affinitybridge/websocketserver"/>
     <source-file src="src/android/Server.java" target-dir="src/com/affinitybridge/websocketserver"/>
     <source-file src="src/android/SnapshotUtil.java" target-dir="src/com/affinitybridge/websocketserver"/>
     <source-file src="src/android/FrameManager.java" target-dir="src/com/affinitybridge/websocketserver"/>
